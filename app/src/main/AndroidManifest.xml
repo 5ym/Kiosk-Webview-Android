@@ -11,19 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <receiver
-            android:name=".AdminReceiver"
-            android:label="Lock Task for SQP"
-            android:permission="android.permission.BIND_DEVICE_ADMIN">
-            <meta-data
-                android:name="android.app.device_admin"
-                android:resource="@xml/device_admin"/>
-
-            <intent-filter>
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
-            </intent-filter>
-        </receiver>
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true">
 
         <activity android:name=".MainActivity">
             <intent-filter>
