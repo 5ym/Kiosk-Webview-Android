@@ -5,13 +5,12 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
-import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.webkit.PermissionRequest
 import android.webkit.WebChromeClient
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -69,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         myWebView.settings.javaScriptEnabled = true
+        myWebView.settings.domStorageEnabled = true
         val uri = this.intent.data
         if(uri != null) {
             myWebView.loadUrl(uri.toString())
@@ -91,7 +91,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
-        Log.v("bkey", event.toString())
         return true
     }
 
